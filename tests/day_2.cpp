@@ -2,9 +2,27 @@
 
 #include "day_2.h"
 
+TEST(day_2, test_password_is_really_valid){
+  std::string input_1 = "1-3 a: abcde";
+  std::string input_2 = "1-3 b: cdefg";
+  std::string input_3 = "2-9 c: ccccccccc";
 
-TEST(day_2, test_day_2_main){
-  int result = day_2_main("/code/tests/day_2_example.txt");
+  Password password_1 = extract_password_from_string(input_1);
+  Password password_2 = extract_password_from_string(input_2);
+  Password password_3 = extract_password_from_string(input_3);
+
+  ASSERT_EQ(password_1.is_really_valid(), true);
+  ASSERT_EQ(password_2.is_really_valid(), false);
+  ASSERT_EQ(password_3.is_really_valid(), false);
+}
+
+TEST(day_2, test_day_2_part_2_main){
+  int result = day_2_part_2_main("/code/tests/day_2_example.txt");
+  ASSERT_EQ(result, 1);
+}
+
+TEST(day_2, test_day_2_part_1_main){
+  int result = day_2_part_1_main("/code/tests/day_2_example.txt");
   ASSERT_EQ(result, 2);
 }
 

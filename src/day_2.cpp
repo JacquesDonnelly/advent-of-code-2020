@@ -1,6 +1,19 @@
 #include "day_2.h"
 
-int day_2_main(std::string file_path){
+int day_2_part_2_main(std::string file_path){
+  int result = 0;
+  std::vector<std::string> strings = load_strings_from_file(file_path);
+  for (std::string string : strings){
+    Password password = extract_password_from_string(string);
+    if (password.is_really_valid()){
+      result++;
+    }
+  }
+  return result;
+}
+
+
+int day_2_part_1_main(std::string file_path){
   int result = 0;
   std::vector<std::string> strings = load_strings_from_file(file_path);
   for (std::string string : strings){
@@ -33,6 +46,12 @@ bool Password::is_valid(){
     result = true;
   }
   return result;
+}
+
+bool Password::is_really_valid(){
+  bool first_correct = (this->text[this->policy.minimum - 1] == this->policy.letter);
+  bool second_correct = (this->text[this->policy.maximum - 1] == this->policy.letter);
+  return first_correct ^ second_correct;
 }
 
 int Password::letter_count(){

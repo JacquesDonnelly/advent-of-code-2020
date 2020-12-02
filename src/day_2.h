@@ -19,10 +19,12 @@ class Password {
     Password(std::string text, Policy policy);
     int letter_count();
     bool is_valid();
+    bool is_really_valid();
 };
 
 Password extract_password_from_string(std::string input_string);
 std::vector<std::string> load_strings_from_file(std::string file_path);
-int day_2_main(std::string file_path);
+int day_2_part_1_main(std::string file_path);
+int day_2_part_2_main(std::string file_path);
 
 #endif
