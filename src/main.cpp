@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "day_10.h"
+#include "day_11.h"
 
 int main(int argc, char **argv) {
-  long long result = day_10_part_2_main("/code/day_10_input.txt");
+  int result = day_11_part_2_main("/code/day_11_input.txt", 5);
   std::cout << result << std::endl;
 }
