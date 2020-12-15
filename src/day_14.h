@@ -14,7 +14,7 @@ class ComputerSystem{
   public:
     void process(std::string line);
     long sum_all_addresses();
-    void update_mask();
+    void update_mask(std::string mask);
   private:
     std::map<long, long> memory;
     std::string mask;
