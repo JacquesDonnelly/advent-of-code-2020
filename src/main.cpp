@@ -1,9 +1,8 @@
 #include <iostream>
 
-#include "day_15.h"
+#include "day_16.h"
 
 int main(int argc, char **argv) {
-  std::vector<int> starters = {0,1,4,13,15,12,16};
-  int result = day_15_part_1_main(starters);
+  int result = day_16_part_1_main("/code/day_16_input.txt");
   std::cout << result << std::endl;
 }
